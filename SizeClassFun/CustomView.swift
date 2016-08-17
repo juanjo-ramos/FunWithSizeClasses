@@ -16,10 +16,10 @@ class CustomView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        changeDummyViewVisibility(false)
+        showDummyView(false)
     }
     
-    func changeDummyViewVisibility(show: Bool) {        
+    func showDummyView(show: Bool) {
         hiddenConstraint.active = !show
         visibleConstraint.active = show
         
@@ -27,7 +27,7 @@ class CustomView: UIView {
     }
     
     @IBAction func buttonTapped() {
-        changeDummyViewVisibility(!isViewVisible)
+        showDummyView(!isViewVisible)
     }
 
 }
