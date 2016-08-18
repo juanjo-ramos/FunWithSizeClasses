@@ -20,6 +20,8 @@ class CustomView: UIView {
     }
     
     func showDummyView(show: Bool) {
+//        guard self.superview != nil else {return}
+
         hiddenConstraint.active = !show
         visibleConstraint.active = show
         
