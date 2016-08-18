@@ -29,11 +29,11 @@ class ViewController: UIViewController {
         self.customView = customView
     }
 
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-//        customView.showDummyView(false)
-//    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        customView.showDummyView(false)
+    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
