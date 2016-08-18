@@ -20,7 +20,13 @@ class CustomView: UIView {
     }
     
     func showDummyView(show: Bool) {
+        print("\(String(CustomView)) - horizontalSizeClass: <\(self.traitCollection.horizontalSizeClass.rawValue)> - verticalSizeClass: <\(self.traitCollection.verticalSizeClass.rawValue)>")
+        
+//        This will prevent the app from crashing on awakeFromNib but it will crash when this is called from viewWillAppear
 //        guard self.superview != nil else {return}
+        
+//        This will prevent the app from crashing at all
+//        guard self.superview != nil && subviews.count >= 2 else {return}
 
         hiddenConstraint.active = !show
         visibleConstraint.active = show
