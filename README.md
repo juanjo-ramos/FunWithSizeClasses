@@ -2,7 +2,7 @@
 This small project to reproduce a problem I encounterd while working with Size Classes.
 
 ## Context
-There is a single view controller - (ViewController.swift)[https://github.com/juanjo-ramos/FunWithSizeClasses/blob/master/SizeClassFun/ViewController.swift]. A custom view is designed on a separate file [CustomView.xib] (https://github.com/juanjo-ramos/FunWithSizeClasses/blob/master/SizeClassFun/CustomView.xib) which gets added the view controller's view on `viewDidLoad()`
+There is a single view controller - [ViewController.swift](https://github.com/juanjo-ramos/FunWithSizeClasses/blob/master/SizeClassFun/ViewController.swift). A custom view is designed on a separate file [CustomView.xib] (https://github.com/juanjo-ramos/FunWithSizeClasses/blob/master/SizeClassFun/CustomView.xib) which gets added the view controller's view on `viewDidLoad()`
 
 That view has:
 * One `UIButton` added for Any-Any size class.
