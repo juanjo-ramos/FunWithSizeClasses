@@ -2,7 +2,7 @@
 This small project to reproduce a problem I encounterd while working with Size Classes.
 
 ## Context
-There is a single view controller - [ViewController.swift](https://github.com/juanjo-ramos/FunWithSizeClasses/blob/master/SizeClassFun/ViewController.swift). A custom view is designed on a separate file [CustomView.xib] (https://github.com/juanjo-ramos/FunWithSizeClasses/blob/master/SizeClassFun/CustomView.xib) which gets added the view controller's view on `viewDidLoad()`
+There is a single view controller - [ViewController.swift](https://github.com/juanjo-ramos/FunWithSizeClasses/blob/master/SizeClassFun/ViewController.swift). A custom view is designed on a separate file [CustomView.xib](https://github.com/juanjo-ramos/FunWithSizeClasses/blob/master/SizeClassFun/CustomView.xib) which gets added the view controller's view on `viewDidLoad()`
 
 That view has:
 * One `UIButton` added for Any-Any size class.
@@ -12,7 +12,7 @@ To hide and show the `UIView` 2 constraints with their corresponding `IBOutlet` 
 1. One to align the `Top` of the button and the view - Identifier: `HiddenConstraint`
 2. One to align the `Bottom` of the view to the `Top` of the button - Identifier: `VisibleConstraint`
 
-[CustomView.swift] (https://github.com/juanjo-ramos/FunWithSizeClasses/blob/master/SizeClassFun/CustomView.swift) contains a [method - showDummyView(_:)] (https://github.com/juanjo-ramos/FunWithSizeClasses/blob/master/SizeClassFun/CustomView.swift#L22) to show and hide the view by activating and deactivating the above constraints.
+[CustomView.swift](https://github.com/juanjo-ramos/FunWithSizeClasses/blob/master/SizeClassFun/CustomView.swift) contains a [method - showDummyView(_:)](https://github.com/juanjo-ramos/FunWithSizeClasses/blob/master/SizeClassFun/CustomView.swift#L22) to show and hide the view by activating and deactivating the above constraints.
 
 ## Problem
 Trying to activate or deactivate any of the above constraints on `awakeFromNib()` would produce the following crash:
