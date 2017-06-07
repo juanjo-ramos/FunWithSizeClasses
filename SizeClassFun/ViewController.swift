@@ -9,13 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private var customView: CustomView!
+    fileprivate var customView: CustomView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("\(String(ViewController)) viewDidLoad - horizontalSizeClass: <\(self.traitCollection.horizontalSizeClass.rawValue)> - verticalSizeClass: <\(self.traitCollection.verticalSizeClass.rawValue)>")
+        print("\(String(describing: ViewController.self)) viewDidLoad - horizontalSizeClass: <\(self.traitCollection.horizontalSizeClass.rawValue)> - verticalSizeClass: <\(self.traitCollection.verticalSizeClass.rawValue)>")
         
-        guard let customView = NSBundle.mainBundle().loadNibNamed(String(CustomView), owner: self, options: nil).first as? CustomView else {
+        guard let customView = Bundle.main.loadNibNamed(String(describing: CustomView.self), owner: self, options: nil)?.first as? CustomView else {
             assertionFailure()
             return
         }
@@ -23,26 +23,26 @@ class ViewController: UIViewController {
         customView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(customView)
         let views = ["customView": customView]
-        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("|[customView]|", options: [], metrics: nil, views: views)
-        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[customView]|", options: [], metrics: nil, views: views)
+        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "|[customView]|", options: [], metrics: nil, views: views)
+        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[customView]|", options: [], metrics: nil, views: views)
         view.addConstraints(horizontalConstraints)
         view.addConstraints(verticalConstraints)
         
         self.customView = customView
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("\(String(ViewController)) viewWillAppear - horizontalSizeClass: <\(self.traitCollection.horizontalSizeClass.rawValue)> - verticalSizeClass: <\(self.traitCollection.verticalSizeClass.rawValue)>")
+        print("\(String(describing: ViewController.self)) viewWillAppear - horizontalSizeClass: <\(self.traitCollection.horizontalSizeClass.rawValue)> - verticalSizeClass: <\(self.traitCollection.verticalSizeClass.rawValue)>")
         
-        customView.showDummyView(false)
+//        customView.showDummyView(false)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("\(String(ViewController)) viewDidAppear - horizontalSizeClass: <\(self.traitCollection.horizontalSizeClass.rawValue)> - verticalSizeClass: <\(self.traitCollection.verticalSizeClass.rawValue)>")
+        print("\(String(describing: ViewController.self)) viewDidAppear - horizontalSizeClass: <\(self.traitCollection.horizontalSizeClass.rawValue)> - verticalSizeClass: <\(self.traitCollection.verticalSizeClass.rawValue)>")
         
-        customView.showDummyView(false)
+//        customView.showDummyView(false)
     }
     
     override func didReceiveMemoryWarning() {
